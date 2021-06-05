@@ -1,0 +1,3 @@
+rootProject.name = "JBAndroidMediaBrowser"
+include ':app'
+include ':jbmediabrowser'
