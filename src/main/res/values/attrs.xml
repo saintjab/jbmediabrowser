@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedView">
+        <attr name="topLeftCornerRadius" format="dimension" />
+        <attr name="topRightCornerRadius" format="dimension" />
+        <attr name="bottomLeftCornerRadius" format="dimension" />
+        <attr name="bottomRightCornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="JBToolbar">
+        <attr name="tint" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="AccessibilityOverlay">
+        <attr name="accessible_group" format="string" />
+    </declare-styleable>
+</resources>

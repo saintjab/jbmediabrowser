@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="JBTextAppearance.Medium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="GalleryTextAppearance.Medium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textStyle">normal</item>
+        <item name="android:color">@android:color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="JBTextAppearance.Std" parent="@android:style/TextAppearance">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="JBDesign.Std.ToolbarTitle" parent="JBTextAppearance.Medium">
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="JBDesign.Std.ToolbarTitle.White" parent="JBDesign.Std.ToolbarTitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>
