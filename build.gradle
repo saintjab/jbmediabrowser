@@ -6,9 +6,21 @@ plugins {
     id 'kotlin-kapt'
 }
 
+apply from: 'uploadLibrary.gradle'
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+
+    major = 1
+    minor = 5
+    patch = 0
+
+    ARTIFACT_NAME=jbmediabrowser
+    ARTIFACT_PACKAGE=com.biplio.jbmediabrowser
+    ARTIFACT_PACKAGING=aar
+    COMPANY=saintjab
+    REPOSITORY_NAME=jbmediabrowser
 
     defaultConfig {
         minSdkVersion 19

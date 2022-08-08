@@ -88,7 +88,7 @@ class VideoActivity : MediaBaseActivity(){
     }
     
     private fun buildMediaSource(uri: Uri): MediaSource {
-        val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(this, "myTC-Android")
+        val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(this, "jbmedia")
         return ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(uri)
     }
     
