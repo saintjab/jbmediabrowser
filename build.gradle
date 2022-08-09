@@ -85,8 +85,6 @@ afterEvaluate {
             maven {
                 name = "GitHubPackages"
 
-                // Replace GITHUB_USERID with your personal or organisation user ID and
-                // REPOSITORY with the name of the repository on GitHub
                 url = uri("https://maven.pkg.github.com/saintjab/jbmediabrowser")
 
                 credentials {
