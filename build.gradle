@@ -4,16 +4,17 @@ plugins {
     id 'kotlin-android-extensions'
     id 'org.jetbrains.kotlin.android.extensions'
     id 'kotlin-kapt'
+    id 'maven-publish'
 }
 
-apply from: 'uploadLibrary.gradle'
+apply from: project.file('gradle.properties')
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -27,12 +28,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        abortOnError true
     }
 }
 
@@ -46,4 +53,47 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-ui:$exoPlayerVersion"
     implementation "com.google.android.exoplayer:exoplayer:$exoPlayerVersion"
     implementation("io.coil-kt:coil:1.2.1")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                // Replace with your own group ID.
+                groupId project.ARTIFACT_PACKAGE
+
+                // Replace with the name of your library
+                artifactId project.ARTIFACT_NAME
+                version "${project.major}.${project.minor}.${project.patch}"
+            }
+
+            debug(MavenPublication) {
+                from components.debug
+
+                // Replace with your own group ID.
+                groupId project.ARTIFACT_PACKAGE
+
+                // Replace with the name of your library
+                artifactId project.ARTIFACT_NAME
+                version "${project.major}.${project.minor}.${project.patch}"
+            }
+        }
+
+        repositories {
+            maven {
+                name = "GitHubPackages"
+
+                // Replace GITHUB_USERID with your personal or organisation user ID and
+                // REPOSITORY with the name of the repository on GitHub
+                url = uri("https://maven.pkg.github.com/saintjab/jbmediabrowser")
+
+                credentials {
+                    username = project.user
+                    password = project.key
+                }
+            }
+        }
+    }
 }
