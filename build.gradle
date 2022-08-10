@@ -61,36 +61,9 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                // Replace with your own group ID.
                 groupId project.ARTIFACT_PACKAGE
-
-                // Replace with the name of your library
                 artifactId project.ARTIFACT_NAME
                 version "${project.major}.${project.minor}.${project.patch}"
-            }
-
-            debug(MavenPublication) {
-                from components.debug
-
-                // Replace with your own group ID.
-                groupId project.ARTIFACT_PACKAGE
-
-                // Replace with the name of your library
-                artifactId project.ARTIFACT_NAME
-                version "${project.major}.${project.minor}.${project.patch}"
-            }
-        }
-
-        repositories {
-            maven {
-                name = "GitHubPackages"
-
-                url = uri("https://maven.pkg.github.com/saintjab/jbmediabrowser")
-
-                credentials {
-                    username = project.user
-                    password = project.key
-                }
             }
         }
     }
