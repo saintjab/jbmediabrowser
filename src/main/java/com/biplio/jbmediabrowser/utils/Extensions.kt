@@ -6,7 +6,7 @@ import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
-import com.travelcounsellors.mytc.ui.utils.animation.BounceView
+import com.biplio.jbmediabrowser.utils.animation.BounceView
 import java.util.*
 
 

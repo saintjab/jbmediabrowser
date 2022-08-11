@@ -1,4 +1,4 @@
-package com.travelcounsellors.mytc.ui.utils.animation
+package com.biplio.jbmediabrowser.utils.animation
 
 import android.view.animation.AccelerateDecelerateInterpolator
 

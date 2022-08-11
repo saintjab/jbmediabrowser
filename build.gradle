@@ -9,6 +9,9 @@ plugins {
 
 apply from: project.file('gradle.properties')
 
+group = project.ARTIFACT_PACKAGE
+version = "${project.major}.${project.minor}.${project.patch}"
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
