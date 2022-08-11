@@ -3,10 +3,7 @@ package com.biplio.jbmediabrowser.utils
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import android.os.Build
-import androidx.annotation.RequiresApi
 
-@RequiresApi(Build.VERSION_CODES.CUPCAKE)
 class NetworkManager {
     companion object {
         fun isNetworkConnected(context: Context?): Boolean {

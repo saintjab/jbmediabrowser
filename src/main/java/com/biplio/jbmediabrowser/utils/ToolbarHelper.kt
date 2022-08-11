@@ -3,7 +3,6 @@ package com.biplio.jbmediabrowser.utils
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.View
 import androidx.annotation.*
 import androidx.appcompat.widget.Toolbar
@@ -11,7 +10,6 @@ import androidx.core.content.ContextCompat
 import com.biplio.jbmediabrowser.R
 import com.biplio.jbmediabrowser.uiviews.JBToolbar
 
-@RequiresApi(Build.VERSION_CODES.CUPCAKE)
 class ToolbarHelper(var mToolbar: Toolbar, toolbarColorInt: Int) {
     
     private abstract class NavAction(@param:DrawableRes private val mNavIcon: Int) {
@@ -43,12 +41,6 @@ class ToolbarHelper(var mToolbar: Toolbar, toolbarColorInt: Int) {
             configureToolbar(object : NavAction(R.drawable.ic_arrow_back_white_24dp) {
                 override fun onClick() {
                     onBackPressed?.run()
-                }
-            }, colorId)
-        }
-        else {
-            configureToolbar(object : NavAction(R.drawable.ic_arrow_back_white_24dp) {
-                override fun onClick() {
                 }
             }, colorId)
         }
